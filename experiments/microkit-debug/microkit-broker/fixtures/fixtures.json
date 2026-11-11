@@ -1,0 +1,11 @@
+{
+  "comment": "Each fixture file and the formal value it stands for (Email_Setting.thy). One trailing newline is stripped from every file.",
+  "secret": {
+    "0": {"file": "secret-0.txt", "formal": "Data 0"},
+    "1": {"file": "secret-1.txt", "formal": "Data 1"}
+  },
+  "email": {
+    "malicious": {"file": "email-malicious.txt", "formal": "Email"},
+    "benign": {"file": "email-benign.txt", "formal": "Data 7"}
+  }
+}

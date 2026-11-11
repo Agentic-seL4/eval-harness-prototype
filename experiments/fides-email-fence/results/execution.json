@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-05",
+  "commands": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "runner.py",
+        "--matrix",
+        "--output",
+        "results/matrix.json"
+      ],
+      "cwd": "/Users/mt0062/repos/Agentic-seL4/research/experiments/fides-email-fence",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "cwd": "/Users/mt0062/repos/Agentic-seL4/research/experiments/fides-email-fence",
+      "exit_code": 0
+    }
+  ]
+}

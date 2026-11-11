@@ -1,0 +1,49 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Microkit: open components",
+      "type": "lldb",
+      "request": "attach",
+      "expressions": "native",
+      "initCommands": [
+        "settings set target.require-hardware-breakpoint true",
+        "settings set target.auto-install-main-executable false"
+      ],
+      "targetCreateCommands": [
+        "target create \"${workspaceFolder}/microkit-broker/build/debug-open/broker.elf\"",
+        "target modules add \"${workspaceFolder}/microkit-broker/build/debug-open/runner.elf\"",
+        "target modules add \"${workspaceFolder}/microkit-broker/build/debug-open/worker.elf\"",
+        "settings set target.require-hardware-breakpoint true"
+      ],
+      "processCreateCommands": [
+        "gdb-remote 127.0.0.1:1234",
+        "target modules load --file \"${workspaceFolder}/microkit-broker/build/debug-open/broker.elf\" --slide 0",
+        "target modules load --file \"${workspaceFolder}/microkit-broker/build/debug-open/runner.elf\" --slide 0",
+        "target modules load --file \"${workspaceFolder}/microkit-broker/build/debug-open/worker.elf\" --slide 0"
+      ]
+    },
+    {
+      "name": "Microkit: fenced components",
+      "type": "lldb",
+      "request": "attach",
+      "expressions": "native",
+      "initCommands": [
+        "settings set target.require-hardware-breakpoint true",
+        "settings set target.auto-install-main-executable false"
+      ],
+      "targetCreateCommands": [
+        "target create \"${workspaceFolder}/microkit-broker/build/debug-fenced/broker.elf\"",
+        "target modules add \"${workspaceFolder}/microkit-broker/build/debug-fenced/runner.elf\"",
+        "target modules add \"${workspaceFolder}/microkit-broker/build/debug-fenced/worker.elf\"",
+        "settings set target.require-hardware-breakpoint true"
+      ],
+      "processCreateCommands": [
+        "gdb-remote 127.0.0.1:1234",
+        "target modules load --file \"${workspaceFolder}/microkit-broker/build/debug-fenced/broker.elf\" --slide 0",
+        "target modules load --file \"${workspaceFolder}/microkit-broker/build/debug-fenced/runner.elf\" --slide 0",
+        "target modules load --file \"${workspaceFolder}/microkit-broker/build/debug-fenced/worker.elf\" --slide 0"
+      ]
+    }
+  ]
+}

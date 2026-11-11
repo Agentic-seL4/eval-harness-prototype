@@ -1,0 +1,4 @@
+.env
+.build-context/
+results/*
+!results/README.md

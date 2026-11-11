@@ -1,0 +1,16 @@
+{
+  "runner.py": "596d30ef40de2c555d5ef60058db24afacf0628ece8268b3e612ad782b0100f8",
+  "test_runner.py": "cc8d61b6ce46282f9d1a05cc9b65aa7c99e0a3feb4c8e306225050b1b466d968",
+  "pyproject.toml": "1eca433bef03a98182fbaeb48a83a9e01717a2cc467985e2e0f2897dd29d08dc",
+  "uv.lock": "cfc859423e7effdc4a622b1262522a61d5a92583c9f0d479081f7570ed3ed677",
+  "README.md": "33305b89b8b544f89c2014504d6184ec41535b8e4a71473987f836b850886873",
+  ".venv/lib/python3.13/site-packages/agent_framework/security.py": "051a0dfe3cf7bb09e734ee331962f46c3d891cb7f89d9fbaf39f21c642d8ce6e",
+  ".venv/lib/python3.13/site-packages/agent_framework/_clients.py": "92aab5e94f1423832c0ff4bf7d80ff224c5d5973ac2ea82cbbca54323fc71005",
+  ".venv/lib/python3.13/site-packages/agent_framework/_tools.py": "c24d37208ac7f5f17c63f98c9a57132a6a442f1e959a317126c691ee20ec5fad",
+  ".venv/lib/python3.13/site-packages/agent_framework/_middleware.py": "c0b1da9ad919dafc67f719859c039222ed6843237acc222d5893f96976e8568b",
+  "reference_core": {
+    "path": "/Users/mt0062/repos/Agentic-seL4/explorations/discovery_phase/prototypes/email-fence/core.py",
+    "sha256": "4eb67402ffa0d837ea2e9f96bcd4d1fa3e67df47cd3785606cbd4ceac7fa2874",
+    "repository_revision": "f0a4c4e97150f3a335f53b5ceb4c6cf410399ecc"
+  }
+}

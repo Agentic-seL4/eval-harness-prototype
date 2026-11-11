@@ -1,0 +1,44 @@
+{
+  "comment": "Intended information flow of broker.system, checked by scripts/check_topology.py (DESIGN.md section 6). Every PD and memory region must be listed. Region access and untrusted authority are upper bounds: a description may grant less, never more. Interrupts are allowed only where untrusted_authority lists them; trusted PDs may not hold any. The sink may be reached from obs_out because it maps its own output buffer read-write (Microkit has no write-only mappings) and is that region's only writer.",
+  "roles": {
+    "sink": "trusted",
+    "broker": "monitor",
+    "runner": "trusted",
+    "worker": "untrusted",
+    "net": "untrusted"
+  },
+  "untrusted_authority": {
+    "worker": {
+      "maps": {"plan_mem": "r", "context": "r"},
+      "calls": ["broker"],
+      "notifies": ["runner"],
+      "irqs": []
+    },
+    "net": {
+      "maps": {"uart1": "rw", "inbox": "rw", "obs_out": "r"},
+      "calls": [],
+      "notifies": ["broker"],
+      "irqs": [40]
+    }
+  },
+  "regions": {
+    "secret":   {"readers": ["broker"], "writers": []},
+    "inbox":    {"readers": ["broker", "net"], "writers": ["net"]},
+    "context":  {"readers": ["broker", "worker"], "writers": ["broker"]},
+    "plan_mem": {"readers": ["runner", "worker"], "writers": ["runner"]},
+    "obs_out":  {"readers": ["sink", "net"], "writers": ["sink"]},
+    "uart1":    {"readers": ["net"], "writers": ["net"]}
+  },
+  "only_reached_from": {
+    "sink": ["broker", "obs_out"]
+  },
+  "mediated": [
+    ["secret", "sink"],
+    ["inbox", "sink"],
+    ["inbox", "worker"],
+    ["worker", "sink"],
+    ["secret", "net"],
+    ["worker", "net"],
+    ["net", "worker"]
+  ]
+}

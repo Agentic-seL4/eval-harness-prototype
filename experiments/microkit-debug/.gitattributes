@@ -1,0 +1,2 @@
+# Preserve QEMU serial evidence, which uses CRLF line endings.
+evidence/**/serial.log -text whitespace=cr-at-eol

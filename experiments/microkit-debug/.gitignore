@@ -1,0 +1,14 @@
+**/build/
+**/output/
+**/__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+.DS_Store
+.uv-cache/
+.credentials/
+credentials*.json
+*.key
+*.pem

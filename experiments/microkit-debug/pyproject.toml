@@ -1,0 +1,6 @@
+[project]
+name = "microkit-host-backend"
+version = "0.1.0"
+description = "Dummy-data model backend for the Microkit email-fence experiment"
+requires-python = ">=3.11"
+dependencies = ["openai>=2"]

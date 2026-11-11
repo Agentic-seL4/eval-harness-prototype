@@ -1,0 +1,19 @@
+/Users/mt0062/repos/Agentic-seL4/research/experiments/fides-email-fence/.venv/lib/python3.13/site-packages/agent_framework/security.py:3630: ExperimentalWarning: [FIDES] ContentVariableStore is experimental and may change or be removed in future versions without notice.
+test_acceptance_rejects_disabled_enforcement (test_runner.PrototypeTests.test_acceptance_rejects_disabled_enforcement) ... ok
+test_acceptance_rejects_missing_attempt_and_incomplete_workflow (test_runner.PrototypeTests.test_acceptance_rejects_missing_attempt_and_incomplete_workflow) ... Policy violation detected
+ok
+test_cli_json_and_invalid_arguments (test_runner.PrototypeTests.test_cli_json_and_invalid_arguments) ... Policy violation detected
+ok
+test_early_stop_is_failure (test_runner.PrototypeTests.test_early_stop_is_failure) ... ok
+test_matrix_through_real_middleware_without_network (test_runner.PrototypeTests.test_matrix_through_real_middleware_without_network) ... Policy violation detected
+Policy violation detected
+Policy violation detected
+Policy violation detected
+ok
+test_same_proposal_and_summary_under_both_policies (test_runner.PrototypeTests.test_same_proposal_and_summary_under_both_policies) ... Policy violation detected
+ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.062s
+
+OK

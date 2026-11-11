@@ -1,0 +1,8 @@
+{
+  "exclude_repositories": [
+    "agentdojo",
+    "sandbox_escape_bench",
+    "sandbox-escape_bench"
+  ],
+  "initial_days": 7
+}

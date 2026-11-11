@@ -1,0 +1,136 @@
+{
+  "comment": "Host model link: worker context may reach authorised host model service through net, but tool effects still require broker. Host/service are outside seL4 confinement.",
+  "roles": {
+    "sink": "trusted",
+    "broker": "monitor",
+    "runner": "trusted",
+    "worker": "untrusted",
+    "net": "untrusted"
+  },
+  "untrusted_authority": {
+    "worker": {
+      "maps": {
+        "plan_mem": "r",
+        "context": "r",
+        "model_req": "rw",
+        "model_reply": "r"
+      },
+      "calls": [
+        "broker"
+      ],
+      "notifies": [
+        "runner",
+        "net"
+      ],
+      "irqs": []
+    },
+    "net": {
+      "maps": {
+        "uart1": "rw",
+        "model_req": "r",
+        "model_reply": "rw"
+      },
+      "calls": [],
+      "notifies": [
+        "worker"
+      ],
+      "irqs": [
+        40
+      ]
+    }
+  },
+  "regions": {
+    "secret": {
+      "readers": [
+        "broker"
+      ],
+      "writers": []
+    },
+    "inbox": {
+      "readers": [
+        "broker"
+      ],
+      "writers": []
+    },
+    "context": {
+      "readers": [
+        "broker",
+        "worker"
+      ],
+      "writers": [
+        "broker"
+      ]
+    },
+    "plan_mem": {
+      "readers": [
+        "runner",
+        "worker"
+      ],
+      "writers": [
+        "runner"
+      ]
+    },
+    "obs_out": {
+      "readers": [
+        "sink"
+      ],
+      "writers": [
+        "sink"
+      ]
+    },
+    "uart1": {
+      "readers": [
+        "net"
+      ],
+      "writers": [
+        "net"
+      ]
+    },
+    "model_req": {
+      "readers": [
+        "worker",
+        "net"
+      ],
+      "writers": [
+        "worker"
+      ]
+    },
+    "model_reply": {
+      "readers": [
+        "worker",
+        "net"
+      ],
+      "writers": [
+        "net"
+      ]
+    }
+  },
+  "only_reached_from": {
+    "sink": [
+      "broker",
+      "obs_out"
+    ]
+  },
+  "mediated": [
+    [
+      "secret",
+      "sink"
+    ],
+    [
+      "inbox",
+      "sink"
+    ],
+    [
+      "inbox",
+      "worker"
+    ],
+    [
+      "worker",
+      "sink"
+    ],
+    [
+      "net",
+      "sink"
+    ]
+  ]
+}

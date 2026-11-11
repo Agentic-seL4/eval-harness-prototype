@@ -1,0 +1,40 @@
+{
+  "repository": "Agentic-seL4/prompt-injection-RS",
+  "commit": "89db278f2632ffac438d681f3ca24724fb303fc4",
+  "reviewed": "2026-10-07",
+  "implementation": "Handwritten finite fixture; no Isabelle build or code export",
+  "files": {
+    "thys/examples/RS/common/Email_Setting.thy": {
+      "sha256": "dc7c40d5ffb5b027343531d93daa4556de7b46bef018879dc0796a50a50eac9f",
+      "mapping": "e1_prog, e1_parse, e1_pick: plan, parser and oracle"
+    },
+    "thys/examples/RS/insecure/Email_Leak.thy": {
+      "sha256": "b2bf4d734227ea00e90996af57c8475b02794e212e63d54b14d4ff61663a8052",
+      "mapping": "E1L policy parameters and e1_tr expected states"
+    },
+    "thys/examples/RS/secure/Email_Fenced.thy": {
+      "sha256": "1411c4877162b6128577db2675028120ee6c73b7f65e0dc3c4ffe09c239e53c0",
+      "mapping": "E1F policy parameters, f_next and E1_fenced_rsecure_event"
+    },
+    "thys/framework/core/Agent_Lang.thy": {
+      "sha256": "0d3cd0b5b621715e84f9aa9baceda6f30d05231d21b26e8433623060ca6ec9fb",
+      "mapping": "planStep, adv, recv: plan execution and response delivery"
+    },
+    "thys/framework/core/Inject_Call.thy": {
+      "sha256": "1433e8a2d54d509c0b2a747f21dcdb15b5121a77ec6976b08d504b27f13d0604",
+      "mapping": "injCall, stepO: one-call injection and discarded response"
+    },
+    "thys/framework/core/Agent_Compose.thy": {
+      "sha256": "4c056b736cef407173d4f891d6ab16418a84c9e7671d002fd0d7a16effd461f6",
+      "mapping": "react, capDecide, capObs: admission, effects and monitor state"
+    },
+    "thys/framework/core/Agent_RS.thy": {
+      "sha256": "77b77a3d6dc88fa7e4a1c058d179c55ee254e92da3d25b20ff132ae25094af48",
+      "mapping": "cint, cgetInt: event interactions"
+    },
+    "thys/framework/core/Agent_Step.thy": {
+      "sha256": "7ad0e4303018cadff5d147317da32ba119e578b48c45af4bd3184e6c6532a173",
+      "mapping": "cintS, cgetIntS: step interactions"
+    }
+  }
+}
