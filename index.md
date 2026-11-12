@@ -1,6 +1,6 @@
 # WP-2 research index
 
-Last updated: 2026-11-11.
+Last updated: 2026-11-12.
 
 ## Scope and current status
 
@@ -88,7 +88,7 @@ supplementary reading of the Microkit broker README, without running its tests.
 
 ## Continuity
 
-The [Inspect email harness](experiments/inspect-email-fence/README.md) is authorised as five incremental steps, with an explanation and pause after each. Step 1 is complete: one fenced/injected/secret-1 Python replay runs through Inspect 0.3.288 and saves its structured trace. The evaluation and guarded integration test passed, with no model generation or network connections in the test. The 16-case matrix, separate scores, host C monitor, controls and final walkthrough remain pending. No VM, container or model API call was used. The [feasibility assessment](notes/inspect-email-harness-feasibility.md) records the earlier analysis and its limits; the bounded LLM stage remains outside the agreed implementation.
+The [Inspect email harness](experiments/inspect-email-fence/README.md) is complete across all five agreed steps. The [code walkthrough](experiments/inspect-email-fence/WALKTHROUGH.md) follows an open-policy case; the [12 November final validation](experiments/inspect-email-fence/VALIDATION.md) records commands, source hashes and results. Both backends pass all 16 original cases and eight public controls; all 24 saved trace comparisons agree. Each backend has four expected matrix disclosures and two blocked post-email public probes, while assignments finish. Each matrix yields eight valid secret pairs with two qualifying distinctions. All 34 tests passed again; the five final evaluations contain 49 samples with no errors, unknowns or model events. The implementation remains uncommitted, with actual source hashes recorded in the ignored final manifest. No VM, container or model API call was used. These are finite checks under a declared observer; live models, deployed containment and formal security proofs remain outside the completed work.
 
 The [scripted FIDES email-fence prototype](experiments/fides-email-fence/README.md) is implemented with Python 3.13.11 and Agent Framework 1.24.0. All 12 matrix/control cases and six tests passed without model calls: open admits the injected dummy-secret Fetch; fenced blocks it; both finish the local summary. A pre-email probe isolates integrity enforcement, and benign email also blocks a public Fetch. FIDES denial terminates an agent run, so trusted completion resumes in the same session. Saved traces and package/source fingerprints support this finite exercise; it is not OS confinement or an RS proof.
 
